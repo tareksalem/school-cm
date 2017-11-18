@@ -77,7 +77,7 @@ router.post("/login/reset", function (req, res, next) {
             from: "ركن الدراسات الاجتماعية",
             to: req.body.email,
             subject: "أهلا" + req.body.email + "\n",
-            text: "يتم ارسال هذه الرسالة حيث تم طلب تغيير كلمة المرور الخاصة بهذا الحساب إذا كان هذا الطلب تم من خلالكم الرجاء الضغط على الرابط التالي لإعادة كلمة المرور" + "\n\n" + "http://localhost:3000/login/resetpassword/" + random + "\n\n"
+            text: "يتم ارسال هذه الرسالة حيث تم طلب تغيير كلمة المرور الخاصة بهذا الحساب إذا كان هذا الطلب تم من خلالكم الرجاء الضغط على الرابط التالي لإعادة كلمة المرور" + "\n\n" + "https://schoolcms1.herokuapp.com/login/resetpassword/" + random + "\n\n"
         };
         smtpTransport.sendMail(mailOptions, function (err, response) {
             req.flash("info", "تم إرسال كلمة المرور إلى الإيميل");
