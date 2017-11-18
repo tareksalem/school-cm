@@ -107,12 +107,6 @@ router.post("/updatebiography", function (req, res, next) {
 router.get("/profile", function (req, res, next) {
      res.render("./controllers/profile", {user: req.user, success: req.flash("success"), title: "الملف الشخصي", titleSite: "ركن الدراسات الاجتماعية", user: req.user, error: req.flash("error"), titleTool: "الملف الشخصي"});
 });
-function isLoggedin(req, res, next) {
-    if (req.isAuthenticated()) {
-        return next();
-    }
-    res.redirect('/');
-}
 //function to update info of user
 router.post("/updateinfouser", function (req, res, next) {
     Assistant.findOne({"_id": req.user.id}, function (err, user) {
@@ -132,6 +126,7 @@ router.post("/updateinfouser", function (req, res, next) {
             });
         }
     });
+
 });
 //router for get the calendar page
 router.get("/calendar", function (req, res, next) {
@@ -156,4 +151,10 @@ router.get("/logout", function (req, res, next) {
     req.session.destroy();
     res.redirect("/");
 });
+function isLoggedin(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next();
+    }
+    res.redirect('/');
+}
 module.exports = router;

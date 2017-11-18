@@ -18,7 +18,7 @@ passport.use("local.login", new LocalStrategy({
         if (err) {
             console.log(err);
         }
-        if (!user) {
+        if (!user || !user.validPassword(password)) {
             req.flash("error", "خطأ في كلمة المرور أو اسم المستخدم");
             return done(null, false, {message: ""});
         }
