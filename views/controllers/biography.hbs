@@ -1,0 +1,42 @@
+<!-- this is page for edit the biography-->
+
+<script src="../javascripts/tinymce_4.7.2/tinymce/js/tinymce/tinymce.min.js"></script>
+<script>tinymce.init({ selector:'#widgEditor' });</script>
+
+<style>
+    @import url("../stylesheets/texteditor.css");
+</style>
+<div class="section col-lg-9 col-md-9 col-sm-6 col-xs-12">
+    <div class="container-texteditor">
+        <div class="row">
+            <div class="cont-tool-title col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                <h2>{{titleTool}}</h2>
+            </div>
+            <div class="cont-user-edit-img col-lg-8 col-md-8 col-sm-8 col-xs-8"></div>
+            <span class="edit-img-btn btn btn-primary">تعديل</span>
+            <img class="edit-img" src="/{{user.userimage}}"/>
+            <form id="form-upload-img" action="/controllers/uploadimg" method="post" enctype="multipart/form-data">
+                <input style="display:none;" id="upload-img" type="file" name="userimage"/>
+
+            </form>
+            {{#if error}}
+                <div style="margin-top:10px;" class="alert alert-danger">{{error}}</div>
+            {{/if}}
+            {{#if success}}
+                <div style="margin-top:10px;" class="alert alert-success">{{success}}</div>
+            {{/if}}
+
+        </div>
+        <form id="form-editor" action="/controllers/updatebiography" method="POST">
+            <div class="editor form-group col-lg-8 col-md-8 col-sm-9 col-xs-10">
+                <textarea name="userBiography" id="widgEditor" class="form-control"></textarea>
+            </div>
+            <div class="form-group col-lg-10 col-md-10 col-xs-10 col-sm-10">
+                <input type="submit" value="حفظ" class="btn btn-primary" style="display:block;margin:auto;width:50%;">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<script src="../javascripts/biography.js"></script>

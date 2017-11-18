@@ -1,0 +1,46 @@
+.container-pages{
+    margin-top:20px;
+    height:auto;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 70px
+}
+
+.contaoner-dashbard {
+    height:auto;
+    background-color: #e2e3e4;
+    color: #e5e6e6;
+}
+
+.section {
+margin-top:110px;
+}
+
+.cont-item{
+    height:100px;
+    text-align:center;
+    cursor: pointer;
+}
+.cont-item h3{
+    position:relative;
+    top:45%;
+    font-size:18px;
+}
+footer{
+    background-color:white;
+}
+footer h4{
+    color:black;
+    margin-left:40px;
+    text-align:left;
+    font-size:17px;
+}
+
+/*media query*/
+@media (max-width: 800px) {
+    .side{display:none}
+    .container-dashbard{width:100%;}
+    .section{width:100%}
+}

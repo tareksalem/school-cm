@@ -1,0 +1,29 @@
+.container-texteditor{
+    width:100%;
+    height:auto;
+}
+
+.cont-tool-title h2{
+    border-bottom:2px solid #cecece;
+    padding:5px;
+}
+.cont-user-info{
+	height:auto;
+	background-color:white;
+	text-align:center;
+}
+.user-info-image img{
+	width:100px;
+	height:100px;
+}
+.user-info{
+	margin-top:20px;
+}
+.user-ids{
+	text-align:right;
+	margin-bottom:10px;
+}
+
+.user-info-text{
+	margin-top:40px;
+}

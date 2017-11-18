@@ -1,0 +1,52 @@
+<style>
+    @import url("../stylesheets/calendar.min.css");
+    @import url("../stylesheets/calendar.css");
+</style>
+
+<div class="section col-lg-9 col-md-9 col-sm-6 col-xs-12">
+	<div class="row">
+		<div class="cont-tool-title col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <h2>{{titleTool}}</h2>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cont-calendar">
+        	<div id="calendar">
+        		<form action="/controllers/addevent" method="POST" class="form-calendar">
+        			<div class="form-group">
+        				<label>عنوان الفاعلية:</label>
+        				<input class="form-control" type="text" name="eventname">
+        			</div>
+        			<div class="form-group">
+        				<label>التاريخ:</label>
+        				<input class="form-control" type="text" name="eventdate">
+        			</div>
+        			<input type="submit" style="display:none;">
+        		</form>
+        		<div class="cal">
+				  <div class="cal__header">
+				    <button class="btn btn-action btn-link btn-lg" data-calendar-toggle="previous"><svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z"></path></svg></button>
+				    <div class="cal__header__label" data-calendar-label="month">
+				      March 2017
+				    </div><button class="btn btn-action btn-link btn-lg" data-calendar-toggle="next"> <svg height="24" version="1.1" viewbox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+				    <path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z"></path></svg></button>
+				  </div>
+				  <div class="cal__week">
+				    <span>Mon</span> <span>Tue</span><span>Wed</span> <span>Thu</span> <span>Fri</span> <span>Sat</span> <span>Sun</span>
+				  </div>
+				  <div class="cal__body" data-calendar-area="month"></div>
+				</div>
+				<div>
+					<span id="date-picker" data-calendar-label="picked"></span>
+				</div>
+				
+					<div class="col-lg-10 col-md-10 col-sm-10 col-sx-10" style="text-align:center;">
+						<div class="form-group">
+						<button type="button" id="addEvent" class="btn btn-primary" style="margin:auto;margin-top:10px;">إضافة الفاعلية</button>
+					</div>
+				</div>
+        	</div>
+        </div>
+	</div>
+</div>
+<script src="../javascripts/calendar.min.js"></script>
+<script src="../javascripts/calendar.js"></script>

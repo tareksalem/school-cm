@@ -1,0 +1,23 @@
+.container-texteditor{
+    width:100%;
+    height:auto;
+}
+
+.cont-tool-title h2{
+    border-bottom:2px solid #cecece;
+    padding:5px;
+}
+.cal{margin:0px;}
+
+.form-calendar input{
+	width:200px;
+	display:inline-block;
+}
+.form-calendar label{
+	display:inline-block;
+	margin-left:10px;
+	width:110px;
+	text-align:left;
+
+}
+#date-picker{display:none;}

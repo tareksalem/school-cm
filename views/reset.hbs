@@ -1,0 +1,24 @@
+<style>
+    @import url("/stylesheets/sign.css");
+</style>
+<div class="container container-fluid container-sign">
+    <form action="/login/reset" class="form-sign" method="POST">
+        <h3>إعادة تعيين كلمة المرور</h3>
+        {{#if info}}
+            <div class="alert alert-info">{{info}}</div>
+        {{/if}}
+        {{#if error}}
+            <div class="alert alert-danger">{{error}}</div>
+        {{/if}}
+        <div class="form-group">
+            <input name="email" type="email" class="form-control" placeholder="أدخل البريد الالكتروني">
+        </div>
+
+        <div class="form-group">
+            <input role="button" type="submit" value="تأكيد" class="submit-sign"/>
+        </div>
+        <div class="form-group">
+            <a href="/login">رجوع</a>
+        </div>
+    </form>
+</div>

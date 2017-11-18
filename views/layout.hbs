@@ -2,9 +2,95 @@
 <html>
   <head>
     <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+      <!--bootstrap-->
+      <link rel='stylesheet' href='/stylesheets/bootstrap.min.css' />
+      <!--font awesom-->
+      <link rel='stylesheet' href='/stylesheets/fonts/css/font-awesome.min.css' />
+      <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-rtl/3.4.0/css/bootstrap-rtl.min.css' />
+      <link rel='stylesheet' href='/stylesheets/style.css' />
+      <!--fvor media query-->
+      <!--<link rel='stylesheet' href='/stylesheets/media.css' />-->
+      <!--font of site-->
+      <link href="https://fonts.googleapis.com/css?family=El+Messiri" rel="stylesheet">
   </head>
   <body>
-    {{{body}}}
+    <!-- header of page-->
+
+    <!--<header class="nav-bar">
+        <h1 class="h1">{{titleSite}}</h1>
+    </header>-->
+
+    {{#if login}}
+        <header class="header">
+            <div class="time col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                <p id="date-now"></p>
+            </div>
+
+            <div class="page-title col-lg-4 col-md-4 col-xs-4 col-sm-4">
+                <h1> ركن الدراسات الاجتماعية</h1>
+            </div>
+
+            <div class="user-options col-lg-4 col-md-4 col-xs-4 col-sm-4" style="text-align:left;">
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <img src="/{{user.userimage}}" class="icon-user-img"></img>
+                        <span class="profile-username">{{user.username}}</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                        <li><a href="/controllers/profile"><i class="fa fa-user"></i> الملف الشخصي </a></li>
+                        <li><a href="/controllers/logout"><i class="fa fa-sign-out" aria-hidden="true"></i>
+                             خروج</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </header>
+    {{/if}}
+    {{#if notlogin}}
+        <header class="nav-bar">
+            <h1 class="h1">{{titleSite}}</h1>
+        </header>
+    {{/if}}
+    {{#if login}}
+<!--sidebar-->
+        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-6">
+            <div class="side">
+                <a href="/controllers/biography" class="side-links"> <i class="fa fa-bars" aria-hidden="true"></i> السيرة الذاتية </a>
+                <a href="/controllers/calendar" class="side-links"> <i class="fa fa-calendar" aria-hidden="true"></i>
+                    الأجندة </a>
+                <a href="#" class="side-links"> <i class="fa fa-rss" aria-hidden="true"></i>
+                    فعاليات وصور </a>
+                <a href="#" class="side-links"> <i class="fa fa-graduation-cap" aria-hidden="true"></i> المدارس</a>
+                <a href="#" class="side-links"> <i class="fa fa-check-square-o" aria-hidden="true"></i>
+                    قسم مسئولى تطوير الجودة </a>
+                <a href="#" class="side-links"> <i class="fa fa-arrows-h" aria-hidden="true"></i> الخطط  </a>
+            </div>
+        </div>
+    {{/if}}
+    <!--end header of page-->
+    <div class="container container-pages">
+        {{{body}}}
+    </div>
+    <!--footer-->
+    {{#if notlogin}}
+        <footer>
+            <p>حميع الحقوق محفزظة 2017</p>
+        </footer>
+    {{/if}}
+    {{#if login}}
+        <footer class="footer">
+            <h4> جميع الحقوق محفوظة 2017 &copy;</h4>
+        </footer>
+    {{/if}}
+
+    <!--end footer-->
+    <!--jquery-->
+    <script src="/javascripts/jquery.min.js"></script>
+    <!--bootstrap-->
+    <script src="/javascripts/bootstrap.min.js"></script>
+
+  <script src="/javascripts/main.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/1.0.0-alpha.2/classic/ckeditor.js"></script>
   </body>
 </html>

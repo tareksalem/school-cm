@@ -1,0 +1,53 @@
+<style>
+    @import url("../stylesheets/profile.css");
+</style>
+
+<div class="section col-lg-9 col-md-9 col-sm-6 col-xs-12">
+	<div class="row">
+		<div class="cont-tool-title col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <h2>{{titleTool}}</h2>
+        </div>
+	    <div class="cont-user-info col-lg-12 col-md-12 col-sm-12 col-sx-12">
+        	<div class="user-info-image">
+        		<img src="/{{user.userimage}}">
+        	</div>
+        	<div class="user-info">
+        		{{#if success}}
+        			<div class="alert alert-success">{{success}}</div>
+        		{{/if}}
+        		<div class="user-ids">
+        			<form action="/controllers/updateinfouser" method="POST" id="updateInfoForm">
+	        			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        				<div class="form-group">
+	        					<label>الاسم</label>
+	        					<input class="form-control" type="text" name="username" value="{{user.username}}">
+	        				</div>
+	        			</div>
+	        			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        				<div class="form-group">
+	        					<label>الإيميل</label>
+	        					<input class="form-control" type="text" name="email" value="{{user.email}}">
+	        				</div>
+	        			</div>
+	        			<div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+	        				<div class="form-group">
+	        					<label>كلمة المرور</label>
+	        					<input class="form-control" type="password" name="password" value="{{user.password}}">
+	        				</div>
+	        			</div>
+	        			<div class="form-group">
+	        				<input type="submit" value="تعديل المعلومات" class="btn btn-default updateInfoBtn" style="display:none;margin:auto;width:50">
+	        			</div>
+	        		</form>
+        		</div>
+        		<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        			<div class="user-info-text">
+    	    			{{{user.userBiography}}}
+	        		</div>
+        		</div>
+        		
+        	</div>
+        </div>
+	</div>
+</div>
+<script src="../javascripts/profile.js"></script>

@@ -1,0 +1,38 @@
+.container-pages{
+    height:550px;
+}
+.container-sign{
+    width:35%;
+    background-color:white;
+    height:auto;
+    margin-top:60px;
+}
+.form-sign h3{
+    text-align:center;
+    margin-bottom:40px;
+}
+.form-sign .form-group{
+    margin:30px 0px 20px 0px;
+}
+.form-sign .form-control{
+    background-color:#faffbd;
+    height:50px;
+}
+.form-sign .submit-sign{
+    width:90%;
+    margin-right:5%;
+    background-color:#6b6b69;
+    color:white;
+    border:none;
+    padding:10px;
+}
+.form-sign a{
+    color:#484847;
+}
+/*media query of page*/
+@media (max-width:600px) {
+    .container-sign{width:80%;}
+}
+.group-alerts{
+    display:none;
+}

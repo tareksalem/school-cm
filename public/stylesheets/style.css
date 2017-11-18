@@ -1,8 +1,127 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+body{
+  font-family: 'El Messiri', sans-serif;
+  background-color:#e5e6e1;
+  height:auto;
 }
 
-a {
-  color: #00B7FF;
+/* style for navbar*/
+.header{
+  height:120px;
+  width:100%;
+  background-color:white;
 }
+.header div{}
+.header h1{
+  margin:0px;
+  font-size:20px;
+  padding:20px 0px 0px 0px;
+  text-align:center;
+  margin-top:30px;
+  font-weight:bold;
+}
+
+.header .dropdown{
+  margin-top:10px;
+  margin-left:20px;
+}
+
+.header .dropdown-menu{left:0;right:auto;
+  padding:0px;
+
+}
+.header .dropdown-menu li{
+  border:1px solid #cecece;
+  padding:5px 0px 5px 0px;
+  border-top:none;
+}
+.header .dropdown-menu li a{
+  padding-top:5px;
+  padding-bottom:5px;
+}
+.icon-user-img{width:40px;height:40px;}
+.header #date-now{
+  margin-top:20px;font-size:17px;
+}
+.nav-bar{
+  background-color:#292929;
+  width:100%;
+  height:40px;
+  color:white;
+}
+
+.nav-bar .h1{
+  font-size:16px;
+  color:white;
+  margin:0px;
+  text-align:center;
+  padding:12px;
+}
+/*end style for navbar*/
+/*style for container of pages*/
+.container-pages{
+  margin:0px;
+  margin-top:20px;
+  height:auto;
+  width:100%;
+  margin-bottom:20px;
+}
+/*style for sidebar*/
+.side {
+  height: 500px;
+  background-color: #2b383f;
+  overflow: hidden;
+  text-align: right;
+  margin-right: 30px;
+  padding: 20px;
+  margin-top:20px;
+}
+.side-links{
+  color:white;
+  display:block;
+  margin-top:10px;
+  text-decoration:none;
+}
+.side-links:hover{
+  color:white;
+  text-decoration:none;
+}
+
+/*style of footer*/
+footer{
+  width:100%;
+  background-color:#292929;
+  height:60px;
+  padding:10px;
+}
+footer p{
+  text-align:left;
+  color:white;
+  padding:10px 10px 0px 0px;
+  margin:0px;
+}
+/*end style of footer*/
+.footer{
+  background-color:white;
+}
+.footer h4{
+  color:black;
+  margin-left:40px;
+  text-align:left;
+  font-size:17px;
+}
+/*media query*/
+@media (max-width: 800px) {
+  .side{display:none}
+  .container-dashbard{width:100%;}
+  .section{width:100%}
+}
+/* some of global classes*/
+.float-right{
+  float:right;
+}
+.float-left{
+  float:left;
+}
+
+/*end some of global classes*/
+
