@@ -17,19 +17,13 @@ const multer = require("multer");
 const sanitize = require("sanitize-html");
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
-//mongoose.connect("mongodb://tarek:tareksalem1@ds159235.mlab.com:59235/mongotarek");
-mongoose.connect("localhost:27017/school");
+mongoose.connect("mongodb://tarek:tareksalem1@ds159235.mlab.com:59235/mongotarek");
+//mongoose.connect("localhost:27017/school");
 const db = mongoose.connection;
 const mongooseDelete = require("mongoose-delete");
 const index = require('./routes/index');
 const users = require('./routes/controllers/users');
 require("./config/assistant");
-/*const storage = multer.diskStorage({
-    destination: "../public/images",
-    filename: function (req, file, cb) {
-        cb(null, file.fieldname + "-" + Date.now() + path.extname(file.originalname));
-    }
-});*/
 const app = express();
 
 
