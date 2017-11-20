@@ -7,19 +7,20 @@ const bodyParser = require('body-parser');
 const session = require("express-session");
 const flash = require("connect-flash");
 const hbs = require("express-handlebars");
+const handlebars = require("handlebars");
+var HandlebarsIntl = require('handlebars-intl');
+HandlebarsIntl.registerWith(handlebars);
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 var expressValidator = require("express-validator");
-const handlebars = require("handlebars");
-const momentjs = require("helper-moment");
 const multer = require("multer");
 const sanitize = require("sanitize-html");
-handlebars.registerHelper("moment", require("helper-moment"));
 const mongodb = require("mongodb");
 const mongoose = require("mongoose");
-mongoose.connect("mongodb://tarek:tareksalem1@ds159235.mlab.com:59235/mongotarek");
-//mongoose.connect("localhost:27017/school");
+//mongoose.connect("mongodb://tarek:tareksalem1@ds159235.mlab.com:59235/mongotarek");
+mongoose.connect("localhost:27017/school");
 const db = mongoose.connection;
+const mongooseDelete = require("mongoose-delete");
 const index = require('./routes/index');
 const users = require('./routes/controllers/users');
 require("./config/assistant");
@@ -34,7 +35,7 @@ const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-
+app.engine("hbs", hbs({defaultLayout: "layout", extname: "hbs"}));
 app.set('view engine', 'hbs');
 
 // uncomment after placing your favicon in /public

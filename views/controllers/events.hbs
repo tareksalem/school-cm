@@ -1,0 +1,107 @@
+<style>
+    @import url("../stylesheets/calendar.min.css");
+    @import url("../stylesheets/calendar.css");
+</style>
+
+<div class="section col-lg-9 col-md-9 col-sm-6 col-xs-12">
+	<div class="row">
+		<div class="cont-tool-title col-lg-4 col-md-4 col-sm-4 col-xs-4">
+            <h2>{{titleTool}}</h2>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 cont-calendar">
+            {{#if error}}
+                <div class="alert alert-danger">{{error}}</div>
+            {{/if}}
+            {{#if success}}
+                <div class="alert alert-success">{{success}}</div>
+            {{/if}}
+        	<div id="calendar">
+        		<form action="/controllers/addevent" method="POST" class="form-calendar form-event col-lg-12 col-md-12 col-xs-12 col-sm-12" enctype="multipart/form-data">
+        			<div class="form-group">
+        				<label>عنوان الفاعلية:</label>
+        				<input class="form-control" type="text" name="eventname">
+        			</div>
+        			<div class="form-group">
+        				<label>التاريخ:</label>
+        				<input class="form-control" type="text" name="eventdate">
+        			</div>
+        			<div class="form-group">
+        				<label>الصور</label>
+        				<button type="button" class="btn btn-primary uploadimgBtn">ارفق صورة</button>
+        				<input style="display:none;" class="form-control addeventimage" type="file" name="eventimage">
+        			</div>
+        			<input type="submit" style="display:none;">
+        			<div class="cont-img col-lg-4 col-md-4 col-sm-6 col-xs-10">
+        				<img class="edit-img" id="s"/>
+        			</div>
+        		</form>
+
+					<span id="date-picker" data-calendar-label="picked"></span>
+				</div>
+				
+					<div class="col-lg-10 col-md-10 col-sm-10 col-sx-10" style="text-align:center;">
+						<div class="form-group">
+						<button type="button" id="addEvent" class="btn btn-primary" style="margin:auto;margin-top:10px;">إضافة الفاعلية</button>
+					</div>
+				</div>
+        	</div>
+        </div>
+        <!--show the posted events-->
+        <div class="container-show-events col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                <h4>عنوان الفعالية</h4>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6">
+                <h4>التاريخ</h4>
+            </div>
+            {{#if event}}
+                {{#each event}}
+                    <div class="container-loop-events col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            {{this.eventname}}
+                        </div>
+                        <div id="div-date" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            {{this.eventdate}}
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <button class="btn btn-danger edit-form-btn">تعديل</button>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                            <form method="post" action="/controllers/deleteevent/{{this.id}}" id="deleteEvent">
+                                <input type="submit" class="btn btn-danger" value="حذف">
+                            </form>
+                        </div>
+                        <div class="container-form-edit-event col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                            <form method="post" action="/controllers/editevent/{{this.id}}" id="editForm" class="form-event" enctype="multipart/form-data">
+                                <div class="form-group">
+                                    <label>عنوان الفاعلية:</label>
+                                    <input class="form-control eventname" type="text" name="eventname" value="{{this.eventname}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>التاريخ:</label>
+                                    <input class="form-control eventdate" type="text" name="eventdate" value="{{this.eventdate}}">
+                                </div>
+                                <div class="form-group">
+                                    <label>الصور</label>
+                                    <button type="button" class="btn btn-primary uploadimgBtn">عدل الصورة</button>
+                                    <input type="file" style="display:none;" class="form-control addeventimage" name="editeventimage" value="{{this.eventimage}}">
+                                </div>
+                                <div class="cont-img col-lg-4 col-md-4 col-sm-6 col-xs-10">
+                                    <img class="edit-img event-image" src="/{{this.eventimage}}"/>
+                                </div>
+                                <div class="col-lg-12 col-md-12 col-xs-12 col-sm-12">
+                                    <div class="form-group">
+                                        <input type="submit" class="btn btn-primary" value="تعديل الفعالية">
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                    </div>
+                {{/each}}
+            {{/if}}
+        </div>
+	</div>
+</div>
+<script src="../javascripts/calendar.min.js"></script>
+<script src="../javascripts/events.js"></script>

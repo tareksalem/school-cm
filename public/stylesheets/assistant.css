@@ -39,8 +39,3 @@ footer h4{
 }
 
 /*media query*/
-@media (max-width: 800px) {
-    .side{display:none}
-    .container-dashbard{width:100%;}
-    .section{width:100%}
-}

@@ -110,11 +110,7 @@ footer p{
   font-size:17px;
 }
 /*media query*/
-@media (max-width: 800px) {
-  .side{display:none}
-  .container-dashbard{width:100%;}
-  .section{width:100%}
-}
+
 /* some of global classes*/
 .float-right{
   float:right;
